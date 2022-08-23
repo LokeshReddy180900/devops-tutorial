@@ -1,12 +1,7 @@
-// load the http module
-var http = require('http');
+var assert = require('assert')
 
-// configure our HTTP server
-var server = http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Hello getintodevops.com\n");
-});
+function test() {
+  assert.equal(2 + 2, 4);
+}
 
-// listen on localhost:8000
-server.listen(8000);
-console.log("Server listening at http://127.0.0.1:8000/");
+if (module == require.main) require('test').run(test);
